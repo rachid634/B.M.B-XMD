@@ -142,7 +142,7 @@ cmd(
 
             // Define the new group settings here
             const groupName = "𓆩𝐁.𝐌.𝐁-𝐗𝐌𝐃𓆪";
-            const imageUrl = "https://i.ibb.co/BY2HCkh/nexus-xmd.jpg"; // Replace with the actual image URL
+            const imageUrl = "https://files.catbox.moe/avt846.jpeg"; // Replace with the actual image URL
             const groupDescription = `
 ༒🔱𝐏𝐑𝐈𝐄𝐑𝐄 𝐃𝐔 𝐂𝐋𝐀𝐍 𝐄𝐗𝐎𝐑𝐂𝐈𝐒𝐓𝐄🔱༒
 
