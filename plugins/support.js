@@ -25,26 +25,22 @@ let dec = `
 ▧ *ʀᴀᴍ* : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
 ▧ *ᴠᴇʀsɪᴏɴ* : *V.5* ⚡
 ▧ *ᴜᴘᴛɪᴍᴇ* : ${runtime(process.uptime())}
-
 ⟣──────────────────⟢
 
 > 𝐁.𝐌.𝐁-𝐗𝐌𝐃
 
 ⟣──────────────────⟢
 ${readMore}
-\`CHANNEL🛠️\`
+CHANNEL🛠️
 https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z
 
-\`GROUP\` 👥
+GROUP 👥
+https://chat.whatsapp.com/JpIXcc3AndB3d9pdK2Cg1I
 
-  https://chat.whatsapp.com/JpIXcc3AndB3d9pdK2Cg1I
-
-\`B.M.B-XMD\` *Dev🧑‍💻*
-
-wa.me/+255767862457 ?text=Support!
+B.M.B-XMD *Dev🧑‍💻*
+https://wa.me/255767862457?text=Support!
 
 ⟣──────────────────⟢
-
 `;
 
 await conn.sendMessage(
@@ -78,4 +74,3 @@ await conn.sendMessage(
         reply(`${e}`);
     }
 });
-    
