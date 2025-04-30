@@ -11,13 +11,13 @@ cmd({
     alias : "version",
     desc: " allmenu",
     category: "allmenu",
-    react: "🫅",
+    react: "🦜",
     filename: __filename
 }, 
 async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sender, senderNumber, botNumber2, botNumber, pushname, isMe, isOwner, groupMetadata, groupName, participants, groupAdmins, isBotAdmins, isAdmins, reply }) => {
     try {
 
-let dec =     
+let dec = `    
 ⟣──────────────────⟢
 ▧ *ᴄʀᴇᴀᴛᴏʀ* : *B.M.B-XMD  (🇹🇿)*
 ▧ *ᴍᴏᴅᴇ* : *${config.MODE}*
@@ -28,18 +28,18 @@ let dec =
 
 ⟣──────────────────⟢
 
-> 🔥𝐁.𝐌.𝐁-𝐗𝐌𝐃🔥 
+> 𝐁.𝐌.𝐁-𝐗𝐌𝐃
 
 ⟣──────────────────⟢
 ${readMore}
-\ CHANNEL🛠️\
+\`CHANNEL🛠️\`
 https://whatsapp.com/channel/0029VawO6hgF6sn7k3SuVU3z
 
-\ GROUP\ 👥
+\`GROUP\` 👥
 
-https://chat.whatsapp.com/JpIXcc3AndB3d9pdK2Cg1I
+  https://chat.whatsapp.com/JpIXcc3AndB3d9pdK2Cg1I
 
-\ 𝐁.𝐌.𝐁-𝐗𝐌𝐃\ *Dev🧑‍💻*
+\`B.M.B-XMD\` *Dev🧑‍💻*
 
 wa.me/+255767862457 ?text=Support!
 
@@ -50,7 +50,7 @@ wa.me/+255767862457 ?text=Support!
 await conn.sendMessage(
             from,
             {
-                image: { url: `https://files.catbox.moe/s7pzei.jpg` },
+                image: { url: `https://i.ibb.co/QFQfWrZF/bmb-xmd.jpg` },
                 caption: dec,
                 contextInfo: {
                     mentionedJid: [m.sender],
@@ -58,7 +58,7 @@ await conn.sendMessage(
                     isForwarded: true,
                     forwardedNewsletterMessageInfo: {
                         newsletterJid: '120363382023564830@newsletter',
-                        newsletterName: '『 🔥𝐁.𝐌.𝐁-𝐗𝐌𝐃🔥 』',
+                        newsletterName: '『 B.M.B-XMD 』',
                         serverMessageId: 143
                     }
                 }
