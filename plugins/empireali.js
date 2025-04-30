@@ -14,14 +14,14 @@ cmd({
        *•────────────•⟢*
                 *𝖥𝖱𝖨𝖤𝖭𝖣’𝖲*
       *╭┈───────────────•*
-      *│  ◦* *▢➠ HANS-TZ*
-      *│  ◦* *▢➠ B.M.B TZ*
-      *│  ◦* *▢➠ YESSER TZ
-      *│  ◦* *▢➠ ENB TZ
-      *│  ◦* *▢➠ BMW KEN
-      *│  ◦* *▢➠ PIKDRILLER KEN
-      *│  ◦* *▢➠ BONIPHACE TZ
-      *│  ◦* *▢➠ MR ANDBAD TZ
+      *│  ◦* *▢➠ B.M.B-XMD🇹🇿
+      *│  ◦* *▢➠ PK DRILLER 🇰🇪
+      *│  ◦* *▢➠ HANS 🇹🇿
+      *│  ◦* *▢➠ YESSER 🇹🇿
+      *│  ◦* *▢➠ BMW KEN🇰🇪
+      *│  ◦* *▢➠ BONIPHACE 🇹🇿
+      *│  ◦* *▢➠ ENB-XMD 🇹🇿
+      *│  ◦* *▢➠ *
       *│  ◦* *▢➠ *
       *│  ◦* *▢➠ *
       *│  ◦* *▢➠ *
