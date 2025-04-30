@@ -1,82 +1,78 @@
-// coded by bmbxmd
-
-const path = require("path");
-const { fetchGif, fetchImage, gifToSticker } = require('../lib/sticker-utils');
-const { tmpdir } = require("os");
-const fetch = require("node-fetch");
-const Crypto = require("crypto");
-const ffmpegPath = require("@ffmpeg-installer/ffmpeg").path;
-const { getBuffer, getGroupAdmins, getRandom, h2k, isUrl, Json, runtime, sleep, fetchJson } = require("../lib/functions");
-const ffmpeg = require("fluent-ffmpeg");
-const fs = require("fs");
 const { cmd } = require('../command');
-const { videoToWebp } = require('../lib/video-utils');
+const crypto = require('crypto');
+const webp = require('node-webpmux');
+const axios = require('axios');
+const fs = require('fs-extra');
+const { exec } = require('child_process');
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
-const config = require("../config");
+const Config = require('../config');
+
+// Take Sticker 
 
 cmd(
-  {
-    pattern: 'vsticker',
-    alias: ['getsticker', 'g2s', 'gs', 'v2s', 'vs',],
-    desc: 'Convert GIF/Video to a sticker.',
-    category: 'sticker',
-    use: '<reply media or URL>',
-    filename: __filename,
-  },
-  async (conn, mek, m, { quoted, args, reply }) => {
-    try {
-      if (!mek.quoted) return reply('*Reply to a video or GIF to convert it to a sticker!*');
+    {
+        pattern: 'take',
+        alias: ['rename', 'stake'],
+        desc: 'Create a sticker with a custom pack name.',
+        category: 'sticker',
+        use: '<reply media or URL>',
+        filename: __filename,
+    },
+    async (conn, mek, m, { quoted, args, q, reply, from }) => {
+        if (!mek.quoted) return reply(`*Reply to any sticker.*`);
+        if (!q) return reply(`*Please provide a pack name using .take <packname>*`);
 
-      const mime = mek.quoted.mtype;
-      if (!['videoMessage', 'imageMessage'].includes(mime)) {
-        return reply('*Please reply to a valid video or GIF.*');
-      }
+        let mime = mek.quoted.mtype;
+        let pack = q;
 
-      // Download the media file
-      const media = await mek.quoted.download();
-
-      // Convert the video to a WebP buffer
-      const webpBuffer = await videoToWebp(media);
-
-      // Generate sticker metadata
-      const sticker = new Sticker(webpBuffer, {
-        pack: config.STICKER_NAME || 'ᴛ ᴏ ɴ ɪ ᴄ',
-        author: 'ᴛ ᴏ ɴ ɪ ᴄ - ᴍ ᴅ', // Leave blank or customize
-        type: StickerTypes.FULL, // FULL for regular stickers
-        categories: ['🤩', '🎉'], // Emoji categories
-        id: '12345', // Optional ID
-        quality: 75, // Set quality for optimization
-        background: 'transparent', // Transparent background
-      });
-
-      // Convert sticker to buffer and send
-      const stickerBuffer = await sticker.toBuffer();
-      return conn.sendMessage(mek.chat, { sticker: stickerBuffer }, { quoted: mek });
-    } catch (error) {
-      console.error(error);
-      reply(`❌ An error occurred: ${error.message}`);
+        if (mime === "imageMessage" || mime === "stickerMessage") {
+            let media = await mek.quoted.download();
+            let sticker = new Sticker(media, {
+                pack: pack, 
+                type: StickerTypes.FULL,
+                categories: ["🤩", "🎉"],
+                id: "12345",
+                quality: 75,
+                background: 'transparent',
+            });
+            const buffer = await sticker.toBuffer();
+            return conn.sendMessage(mek.chat, { sticker: buffer }, { quoted: mek });
+        } else {
+            return reply("*Uhh, Please reply to an image.*");
+        }
     }
-  }
-);    
+);
 
+//Sticker create 
 
-cmd({
-    pattern: "attp",
-    desc: "Convert text to a GIF sticker.",
-    react: "✨",
-    category: "convert",
-    use: ".attp HI",
-    filename: __filename,
-}, async (conn, mek, m, { args, reply }) => {
-    try {
-        if (!args[0]) return reply("*Please provide text!*");
-
-        const gifBuffer = await fetchGif(`https://api-fix.onrender.com/api/maker/attp?text=${encodeURIComponent(args[0])}`);
-        const stickerBuffer = await gifToSticker(gifBuffer);
-
-        await conn.sendMessage(m.chat, { sticker: stickerBuffer }, { quoted: mek });
-    } catch (error) {
-        reply(`❌ ${error.message}`);
+cmd(
+    {
+        pattern: 'sticker',
+        alias: ['s', 'stickergif'],
+        desc: 'Create a sticker from an image, video, or URL.',
+        category: 'sticker',
+        use: '<reply media or URL>',
+        filename: __filename,
+    },
+    async (conn, mek, m, { quoted, args, q, reply, from }) => {
+        if (!mek.quoted) return reply(`*Reply to any Image or Video, Sir.*`);
+        let mime = mek.quoted.mtype;
+        let pack = Config.STICKER_NAME || "𝙱.𝙼.𝙱-𝚇𝙼𝙳";
+        
+        if (mime === "imageMessage" || mime === "stickerMessage") {
+            let media = await mek.quoted.download();
+            let sticker = new Sticker(media, {
+                pack: pack, 
+                type: StickerTypes.FULL,
+                categories: ["🤩", "🎉"], 
+                id: "12345",
+                quality: 75, 
+                background: 'transparent',
+            });
+            const buffer = await sticker.toBuffer();
+            return conn.sendMessage(mek.chat, { sticker: buffer }, { quoted: mek });
+        } else {
+            return reply("*Uhh, Please reply to an image.*");
+        }
     }
-});
-
+);
