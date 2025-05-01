@@ -10,7 +10,6 @@
 ---
   </p>
 ```
-Dont forget to fork & star repo
 ```
 ---
 <div align="center">
