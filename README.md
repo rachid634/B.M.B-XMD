@@ -1,9 +1,16 @@
-
-  <p align="center">
-<a href="https://github.com/bmbxmd?tab=followers"><img title="Followers" src="https://img.shields.io/github/followers/bmbxmd?label=Followers&style=social"></a>
-<a href="https://github.com/bmbxmd/B.M.B-XMD/stargazers"><img title="STARS" src="https://img.shields.io/github/stars/bmbxmd/B.M.B-XMD?&style=social"></a>
-<a href="https://github.com/bmbxmd/B.M.B-XMD/fork/network/members"><img title="Forks" src="https://img.shields.io/github/forks/bmbxmd/B.M.B-XMD?style=social"></a>
-<a href="https://github.com/bmbxmd/B.M.B-XMD/watchers"><img title="Watching" src="https://img.shields.io/github/watchers/bmbxmd/B.M.B-XMD?label=Watching&style=social"></a>
+<p align="center">
+  <a href="https://github.com/bmbxmd?tab=followers">
+    <img src="https://img.shields.io/github/followers/bmbxmd?label=Followers&style=flat&color=007bff" alt="Followers" style="transform: scale(1.4); margin: 5px;"/>
+  </a>
+  <a href="https://github.com/bmbxmd/B.M.B-XMD/stargazers">
+    <img src="https://img.shields.io/github/stars/bmbxmd/B.M.B-XMD?style=flat&color=007bff" alt="Stars" style="transform: scale(1.4); margin: 5px;"/>
+  </a>
+  <a href="https://github.com/bmbxmd/B.M.B-XMD/fork">
+    <img src="https://img.shields.io/github/forks/bmbxmd/B.M.B-XMD?style=flat&color=007bff" alt="Forks" style="transform: scale(1.4); margin: 5px;"/>
+  </a>
+  <a href="https://github.com/bmbxmd/B.M.B-XMD/watchers">
+    <img src="https://img.shields.io/github/watchers/bmbxmd/B.M.B-XMD?label=Watching&style=flat&color=007bff" alt="Watching" style="transform: scale(1.4); margin: 5px;"/>
+  </a>
     
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Black+Ops+One&size=100&pause=1000&color=ff0000&center=true&width=1000&height=200&lines=BMB-XMD-V4.0" alt="Typing SVG" /></a>
   </p>
